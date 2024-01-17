@@ -1,0 +1,7 @@
+header {
+  background-color: var(--bg-main);
+  height: 100px;
+}
+header .menu li {
+  margin-right: 60px;
+}
