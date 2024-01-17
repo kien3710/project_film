@@ -1,10 +1,9 @@
 "use client";
-import { toggleTheme } from "@/utils/features/themeSlice";
-import { useAppDispatch, useAppSelector } from "@/utils/hook";
 import "./main.css";
 import Link from "next/link";
 import { FaSignInAlt } from "react-icons/fa";
 import Search from "@/components/search";
+import { useEffect } from "react";
 import Hot from "@/components/hot";
 
 import React from "react";
