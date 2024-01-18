@@ -1,48 +1,30 @@
 "use client";
-import "./main.css";
-import Link from "next/link";
-import { FaSignInAlt } from "react-icons/fa";
-import Search from "@/components/search";
-import { useEffect } from "react";
-import Hot from "@/components/hot";
+import Analog from "@/components/ui/analog";
 
-import React from "react";
+import Hot from "@/components/ui/hot";
+import Product from "@/components/ui/product";
+import { useAppSelector } from "@/utils/hook";
+import { getAllAction, selectProduct } from "@/utils/features/productSlice";
+import { useDispatch } from "react-redux";
+import React, { useEffect } from "react";
+import Trending from "@/components/ui/trending";
 
 const Home = () => {
+  const dataProduct = useAppSelector(selectProduct);
+  const { data } = dataProduct;
+  const dispatch = useDispatch();
+  const getAll = () => {
+    dispatch(getAllAction());
+  };
+  useEffect(() => {
+    getAll();
+  }, []);
   return (
     <>
-      <div className="container mx-auto ">
-        <header className="flex justify-between items-center text-white">
-          <div className="logo">LOGO</div>
-          <ul className="menu flex">
-            <li>
-              <Link href="#">Home</Link>
-            </li>
-            <li>
-              <Link href="#">Catalog</Link>
-            </li>
-            <li>
-              <Link href="#">Pricing plans</Link>
-            </li>
-            <li>
-              <Link href="#">LIVE</Link>
-            </li>
-            <li>
-              <Link href="#">...</Link>
-            </li>
-          </ul>
-          <div className="feature flex items-center">
-            <div className="search_page relative pr-[20px]">
-              <Search />
-            </div>
-            <div className="login flex items-center">
-              Sign in
-              <FaSignInAlt className="pl-[10px] w-[24px] h-[24px]" />
-            </div>
-          </div>
-        </header>
-      </div>
-      <Hot />
+      <Hot data={data} />
+      <Analog />
+      <Product data={data} />
+      <Trending data={data} />
     </>
   );
 };

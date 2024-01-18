@@ -1,0 +1,10 @@
+.popular ul {
+  display: flex;
+}
+.popular ul li {
+  cursor: pointer;
+  margin-right: 10px;
+  padding: 5px 10px;
+  background-color: #141f2f;
+  border-radius: 20px;
+}

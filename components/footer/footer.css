@@ -1,0 +1,11 @@
+.footer {
+  position: relative;
+}
+.footer::after {
+  content: "";
+  position: absolute;
+  border-top: 1px solid rgba(47, 128, 237, 0.1);
+  top: 0;
+  left: 150px;
+  right: 150px;
+}

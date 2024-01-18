@@ -12,14 +12,29 @@ export const getAllAction = createAsyncThunk("products/list", async () => {
     throw error;
   }
 });
+export const getByIdAction = createAsyncThunk(
+  "products/detail",
+  async (productId) => {
+    try {
+      const response = await axios.get(
+        `https://dummyjson.com/products/${productId}`
+      );
 
+      return response.data; // Assuming the response has a "product" field for the single item
+    } catch (error) {
+      // Handle errors here
+      throw error;
+    }
+  }
+);
 const productSlice = createSlice({
   name: "product",
   initialState: {
     data: [],
+    status: [],
     totalPage: 0,
     dataUpdate: [],
-    dataStatistics: [],
+    data: [],
   },
   extraReducers: (builder) => {
     //get all
@@ -32,6 +47,19 @@ const productSlice = createSlice({
         state.data = action.payload;
       })
       .addCase(getAllAction.rejected, (state, action) => {
+        state.status = "failed";
+        state.error = action.error.message;
+      });
+    // get by id
+    builder
+      .addCase(getByIdAction.pending, (state) => {
+        state.status = "loading";
+      })
+      .addCase(getByIdAction.fulfilled, (state, action) => {
+        state.status = "succeeded";
+        state.dataUpdate = action.payload;
+      })
+      .addCase(getByIdAction.rejected, (state, action) => {
         state.status = "failed";
         state.error = action.error.message;
       });

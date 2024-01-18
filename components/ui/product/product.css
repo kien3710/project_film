@@ -1,0 +1,66 @@
+.product_color {
+  background: rgb(19, 23, 32);
+  background: linear-gradient(
+    180deg,
+    rgba(19, 23, 32, 1) 0%,
+    rgba(19, 26, 37, 1) 100%
+  );
+}
+
+.product .item {
+  width: 100%;
+  height: 350px;
+  cursor: pointer;
+}
+.product .item .box_image {
+  position: relative;
+}
+
+.product .item:hover .box_image {
+  transform: scale(1.1);
+  /* filter: blur(1px); */
+  position: relative;
+}
+.product .item .box_image .icon_play {
+  opacity: 0;
+  visibility: hidden;
+}
+.product .item .box_image::before {
+  content: "";
+  position: absolute;
+  display: block;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 2;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.1) 0%,
+    rgba(0, 0, 0, 0.8) 75%,
+    rgba(0, 0, 0, 0.9) 100%
+  );
+  opacity: 0.1;
+  transition: 0.5s;
+}
+.product .item:hover .box_image::before {
+  opacity: 0.7;
+}
+
+.product .item:hover .box_image .icon_play {
+  position: absolute;
+  content: "";
+  width: 80px;
+  height: 80px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 1;
+  visibility: visible;
+  filter: blur(0);
+  color: white;
+  z-index: 10;
+}
+.product .item:hover .title p:first-child {
+  color: var(--color);
+}
