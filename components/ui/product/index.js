@@ -1,9 +1,6 @@
 import React, { useState } from "react";
 import "./product.css";
 import { MdPlayCircleOutline } from "react-icons/md";
-import { useDispatch } from "react-redux";
-import { getByIdAction } from "@/utils/features/productSlice";
-import Link from "next/link";
 import { useRouter } from "next/navigation";
 
 const Product = ({ data }) => {

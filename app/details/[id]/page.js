@@ -1,9 +1,33 @@
-import React from "react";
+"use client";
+
+import React, { useEffect } from "react";
 import { MdPlayCircleOutline } from "react-icons/md";
 import { CiStar } from "react-icons/ci";
 import "./details.css";
-import PlayVideo from "./playVideo";
+import { useParams } from "next/navigation";
+import { useDispatch, useSelector } from "react-redux";
+import { getByIdAction, selectProduct } from "@/utils/features/productSlice";
+
 const Details = () => {
+  const params = useParams();
+  console.log(params.id);
+  const dispatch = useDispatch();
+
+  const getIdData = async () => {
+    await dispatch(getByIdAction(params.id));
+  };
+  useEffect(() => {
+    getIdData();
+  }, []);
+  // Route -> /shop/[tag]/[item]
+  // URL -> /shop/shoes/nike-air-max-97
+  // `params` -> { tag: 'shoes', item: 'nike-air-max-97' }
+  // const dataDetail = useSelector(selectProduct);
+  // console.log(dataDetail);
+  const dataDetail = useSelector(selectProduct);
+  const { dataUpdate } = dataDetail;
+  console.log(dataUpdate);
+
   return (
     <div className="details py-[50px]">
       <div className="container mx-auto">
@@ -12,9 +36,7 @@ const Details = () => {
           <p className="text-white">Trailer</p>
         </div>
         <div className="title mb-[16px]">
-          <p className="text-[36px] text-white mb-[10px]">
-            The Fast and the Furious
-          </p>
+          <p className="text-[36px] text-white mb-[10px]">{dataUpdate.title}</p>
           <ul className="rating flex text-white items-center">
             <li className=" flex items-center mr-[30px]">
               <CiStar className="text-[#2f80ed] w-[20px] h-[20px] mr-[5px]" />
@@ -34,13 +56,7 @@ const Details = () => {
             </li>
           </ul>
         </div>
-        <p className="des w-[60%] text-white">
-          It is a long established fact that a reader will be distracted by the
-          readable content of a page when looking at its layout. The point of
-          using Lorem Ipsum is that it has a more-or-less normal distribution of
-          letters, as opposed to using Content here, content here, making it
-          look like readable English.
-        </p>
+        <p className="des w-[60%] text-white">{dataUpdate.description}</p>
         <div className="video">
           <div class="grid grid-cols-3 gap-4">
             <div class="col-span-2 h-[500px] bg-red-500">04</div>

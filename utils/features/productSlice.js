@@ -19,7 +19,6 @@ export const getByIdAction = createAsyncThunk(
       const response = await axios.get(
         `https://dummyjson.com/products/${productId}`
       );
-
       return response.data; // Assuming the response has a "product" field for the single item
     } catch (error) {
       // Handle errors here

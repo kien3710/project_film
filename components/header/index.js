@@ -11,7 +11,7 @@ const Header = () => {
         <div className="logo">LOGO</div>
         <ul className="menu flex">
           <li>
-            <Link href="#">Home</Link>
+            <Link href="/">Home</Link>
           </li>
           <li>
             <Link href="#">Catalog</Link>
