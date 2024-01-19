@@ -27,7 +27,7 @@ export default function Hot({ data }) {
         {data.map((item) => (
           <>
             <SwiperSlide>
-              <Link href="#">
+              <Link href="#" className="sw">
                 <div
                   className={`hot_swiper bg-cover bg-center flex flex-col p-[10px] justify-between`}
                   style={{ backgroundImage: `url(${item.images[0]})` }}

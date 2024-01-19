@@ -6,25 +6,35 @@ import Product from "@/components/ui/product";
 import { useAppSelector } from "@/utils/hook";
 import { getAllAction, selectProduct } from "@/utils/features/productSlice";
 import { useDispatch } from "react-redux";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Trending from "@/components/ui/trending";
+import Loading from "@/components/loading";
 
 const Home = () => {
+  const [loading, setLoading] = useState(false);
   const dataProduct = useAppSelector(selectProduct);
+
   const { data } = dataProduct;
   const dispatch = useDispatch();
-  const getAll = () => {
-    dispatch(getAllAction());
+  const getAll = async () => {
+    await dispatch(getAllAction());
+    setLoading(true);
   };
   useEffect(() => {
     getAll();
   }, []);
   return (
     <>
-      <Hot data={data} />
-      <Analog />
-      <Product data={data} />
-      <Trending data={data} />
+      {loading ? (
+        <>
+          <Hot data={data} />
+          <Analog />
+          <Product data={data} />
+          <Trending data={data} />
+        </>
+      ) : (
+        <Loading />
+      )}
     </>
   );
 };

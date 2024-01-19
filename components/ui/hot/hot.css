@@ -8,6 +8,28 @@
 .hot_swiper .feature {
   opacity: 0;
 }
+.sw {
+  position: relative;
+}
+.sw::after {
+  content: "";
+  position: absolute;
+  display: block;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 2;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.1) 0%,
+    rgba(0, 0, 0, 0.8) 75%,
+    rgba(0, 0, 0, 0.9) 100%
+  );
+  opacity: 0.65;
+  transition: 0.5s;
+  pointer-events: none;
+}
 .hot_swiper:hover .feature {
   transition: all 1s ease;
   opacity: 1;

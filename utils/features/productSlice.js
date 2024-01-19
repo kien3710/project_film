@@ -6,6 +6,7 @@ import axios from "axios";
 export const getAllAction = createAsyncThunk("products/list", async () => {
   try {
     const response = await axios.get("https://dummyjson.com/products");
+
     return response.data.products;
   } catch (error) {
     // Thực hiện xử lý lỗi ở đây
@@ -31,7 +32,7 @@ const productSlice = createSlice({
   initialState: {
     data: [],
     status: [],
-    totalPage: 0,
+    // totalPage: 0,
     dataUpdate: [],
     data: [],
   },

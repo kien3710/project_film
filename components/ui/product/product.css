@@ -14,11 +14,11 @@
 }
 .product .item .box_image {
   position: relative;
+  transition: all 1s ease;
 }
 
 .product .item:hover .box_image {
   transform: scale(1.1);
-  /* filter: blur(1px); */
   position: relative;
 }
 .product .item .box_image .icon_play {
