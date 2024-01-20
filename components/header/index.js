@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import { FaSignInAlt } from "react-icons/fa";
-import Search from "@/components/ui/search";
+import Search from "@/components/ui/home/search";
 import "./header.css";
 
 const Header = () => {
@@ -30,10 +30,12 @@ const Header = () => {
           <div className="search_page relative pr-[20px]">
             <Search />
           </div>
-          <div className="login flex items-center">
-            Sign in
-            <FaSignInAlt className="pl-[10px] w-[24px] h-[24px]" />
-          </div>
+          <Link href="/login">
+            <div className="login flex items-center">
+              Sign in
+              <FaSignInAlt className="pl-[10px] w-[24px] h-[24px]" />
+            </div>
+          </Link>
         </div>
       </header>
     </div>

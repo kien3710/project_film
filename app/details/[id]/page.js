@@ -1,4 +1,5 @@
 "use client";
+import { FaDownload } from "react-icons/fa6";
 
 import React, { useEffect, useState } from "react";
 import { MdPlayCircleOutline } from "react-icons/md";
@@ -9,29 +10,42 @@ import { useDispatch, useSelector } from "react-redux";
 import { getByIdAction, selectProduct } from "@/utils/features/productSlice";
 import Loading from "@/components/loading";
 import ReactPlayer from "react-player";
+import FormTrailer from "@/components/ui/details/formTrailer";
+
 const Details = () => {
   const params = useParams();
   const [loading, setLoading] = useState(false);
+  const [formTrailer, setFormTrailer] = useState(false);
   const dispatch = useDispatch();
 
+  // get all data
   const getIdData = async () => {
     await dispatch(getByIdAction(params.id));
     setLoading(true);
   };
+  // close form trailer
+  const handleFormTrailer = () => {
+    setFormTrailer(true);
+  };
   useEffect(() => {
     getIdData();
   }, []);
-
   const dataDetail = useSelector(selectProduct);
   const { dataUpdate } = dataDetail;
-
   return (
     <>
       {loading ? (
         <>
+          <FormTrailer
+            formTrailer={formTrailer}
+            closeFormTrailer={() => setFormTrailer(false)}
+          />
           <div className="details py-[50px]">
             <div className="container mx-auto">
-              <div className="trailer flex items-center mb-[16px] ">
+              <div
+                className="trailer flex items-center mb-[16px] inline-flex"
+                onClick={handleFormTrailer}
+              >
                 <MdPlayCircleOutline className="icon_play w-[46px] h-[46px] text-white mr-[10px]" />
                 <p className="text-white">Trailer</p>
               </div>
@@ -61,7 +75,7 @@ const Details = () => {
               <p className="des w-[60%] text-white mb-[50px]">
                 {dataUpdate.description}
               </p>
-              <div className="video w-[800px] h-[400px] rounded-[20px] overflow-hidden">
+              <div className="video w-[800px] h-[400px] rounded-[20px] overflow-hidden mb-[20px]">
                 <ReactPlayer
                   width="100%"
                   height="100%"
@@ -69,6 +83,17 @@ const Details = () => {
                   url="https://www.youtube.com/watch?v=LXb3EKWsInQ"
                 />
               </div>
+              <div className="download flex items-center text-white mb-[2rem]">
+                <FaDownload className="text-[#2f80ed] mr-[10px]" />
+                <p className="mr-[15px]">Download:</p>
+                <ul className="flex">
+                  <li>480p</li>
+                  <li>720p</li>
+                  <li>1080p</li>
+                  <li>4k</li>
+                </ul>
+              </div>
+              <div className="continue"></div>
             </div>
           </div>
         </>

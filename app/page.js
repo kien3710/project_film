@@ -1,13 +1,13 @@
 "use client";
-import Analog from "@/components/ui/analog";
+import Analog from "@/components/ui/home/analog";
 
-import Hot from "@/components/ui/hot";
-import Product from "@/components/ui/product";
+import Hot from "@/components/ui/home/hot";
+import Product from "@/components/ui/home/product";
 import { useAppSelector } from "@/utils/hook";
 import { getAllAction, selectProduct } from "@/utils/features/productSlice";
 import { useDispatch } from "react-redux";
 import React, { useEffect, useState } from "react";
-import Trending from "@/components/ui/trending";
+import Trending from "@/components/ui/home/trending";
 import Loading from "@/components/loading";
 
 const Home = () => {

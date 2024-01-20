@@ -1,0 +1,27 @@
+.formTrailer {
+  position: absolute;
+  top: 150px;
+  left: 250px;
+  right: 250px;
+  bottom: 150px;
+  background-color: red;
+  z-index: 10;
+  border-radius: 10px;
+  transition: all 0.5s ease;
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: var(--bg-main);
+  z-index: 9;
+  opacity: 0.5;
+}
+.form_none {
+  opacity: 0;
+
+  /* display: none; */
+  /* visibility: ; */
+}

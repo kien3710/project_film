@@ -1,6 +1,15 @@
 .rating li {
   position: relative;
 }
+.trailer {
+  cursor: pointer;
+}
+.trailer:hover svg {
+  color: #2f80ed;
+}
+.trailer:hover .text-white {
+  color: #2f80ed;
+}
 .rating li:not(:last-child)::after {
   position: absolute;
   content: "";
@@ -11,4 +20,7 @@
   top: 50%;
   transform: translateY(-50%);
   right: -20px;
+}
+.download ul li {
+  margin-right: 1rem;
 }
