@@ -2,7 +2,7 @@ import React from "react";
 import Header from "../header";
 import Footer from "../footer";
 
-const DefaultLayout = ({ children }) => {
+const LayoutDefault = ({ children }) => {
   return (
     <>
       <Header />
@@ -12,4 +12,4 @@ const DefaultLayout = ({ children }) => {
   );
 };
 
-export default DefaultLayout;
+export default LayoutDefault;
