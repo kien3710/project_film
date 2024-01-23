@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useEffect } from "react";
 import "./trending.css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -7,10 +7,25 @@ import "swiper/css/navigation";
 import { FaLongArrowAltLeft } from "react-icons/fa";
 import { FaLongArrowAltRight } from "react-icons/fa";
 import { MdPlayCircleOutline } from "react-icons/md";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
+// Register ScrollTrigger with GSAP
+gsap.registerPlugin(ScrollTrigger);
 const Trending = ({ data }) => {
   const navigationNextRef = useRef(null);
   const navigationPrevRef = useRef(null);
+  useEffect(() => {
+    gsap.from(".box_trending", {
+      y: 100,
+      duration: 1,
+      scrollTrigger: {
+        trigger: ".box_trending",
+        start: "bottom +=200", // Start the animation when the trigger element is 80% in view
+        end: "+=100", // End the animation 100 pixels after the trigger element
+      },
+    });
+  }, []);
   return (
     <div className="container mx-auto">
       <div className="py-[50px]">

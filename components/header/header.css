@@ -1,7 +1,35 @@
+@font-face {
+  font-family: "samurai";
+  src: url("/font/Akashii.ttf");
+}
+
 header {
-  background-color: var(--bg-main);
   height: 100px;
+  position: fixed;
+  right: 0;
+  left: 0;
+  padding: 0 11.5rem;
+  z-index: 999;
+  font-weight: bold;
+  transition: all 0.5s ease;
+}
+.logo {
+  cursor: pointer;
+  font-family: "samurai", sans-serif;
+  font-size: 100px;
+  color: #1380e8;
+}
+.header_sticky {
+  background-color: var(--bg-main);
 }
 header .menu li {
   margin-right: 60px;
+}
+header .menu li:hover a {
+  color: #1380e8;
+  transition: all 0.5s ease;
+}
+header .login:hover {
+  transition: all 0.5s ease;
+  color: #1380e8;
 }

@@ -1,6 +1,24 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./analog.css";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
+
 const Analog = () => {
+  useEffect(() => {
+    gsap.to(".analog", {
+      opacity: 1,
+      y: -10,
+
+      duration: 1,
+      scrollTrigger: {
+        y: -10,
+        trigger: ".analog",
+        start: "top bottom", // Adjust the start position as needed
+        end: "bottom center", // Adjust the end position as needed
+      },
+    });
+  }, []);
   return (
     <div className="container mx-auto mt-[70px]">
       <div className="analog my-[20px] px-[20px] py-[30px] bg-[#141f2f]  rounded-b-[20px] flex justify-between items-center">

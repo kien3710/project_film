@@ -1,3 +1,6 @@
+.analog {
+  transform: translateY(100px);
+}
 .popular ul {
   display: flex;
 }

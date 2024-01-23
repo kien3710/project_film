@@ -1,15 +1,39 @@
 .hot_swiper {
   width: 100%;
-  height: 350px;
   background-color: white;
   position: relative;
   border-radius: 20px;
 }
+.hot_film {
+  position: relative;
+}
 .hot_swiper .feature {
   opacity: 0;
 }
+.thumbs {
+  position: absolute;
+  left: 50px;
+  right: 50px;
+  bottom: 0;
+  z-index: 100;
+  opacity: 0;
+}
+.box_thumb {
+  overflow: hidden;
+}
+.box_thumb:hover .box_img {
+  transform: scale(1.1);
+  transition: all 0.7s ease;
+}
+.box_thumb:hover .ciPlay {
+  transition: all 0.7s ease;
+
+  opacity: 1;
+}
+
 .sw {
   position: relative;
+  z-index: 9;
 }
 .sw::after {
   content: "";
@@ -21,10 +45,9 @@
   left: 0;
   z-index: 2;
   background: linear-gradient(
-    180deg,
-    rgba(0, 0, 0, 0.1) 0%,
-    rgba(0, 0, 0, 0.8) 75%,
-    rgba(0, 0, 0, 0.9) 100%
+    206deg,
+    rgba(0, 0, 0, 0.5) 0%,
+    rgba(0, 0, 0, 1) 100%
   );
   opacity: 0.65;
   transition: 0.5s;
@@ -36,10 +59,9 @@
 }
 .hot_swiper:hover::before {
   background: linear-gradient(
-    180deg,
-    rgba(0, 0, 0, 0.1) 0%,
-    rgba(0, 0, 0, 0.8) 75%,
-    rgba(0, 0, 0, 0.9) 100%
+    206deg,
+    rgba(0, 0, 0, 0.5) 0%,
+    rgba(0, 0, 0, 1) 100%
   );
   opacity: 0.65;
   position: absolute;
@@ -49,4 +71,23 @@
 }
 .hot_swiper:hover .title p:first-child {
   color: #1380e8;
+}
+.title_hot {
+  position: absolute;
+  top: 20%;
+  left: 0;
+  z-index: 11;
+  text-transform: uppercase;
+}
+.btn button {
+  padding: 7px 20px;
+  margin-right: 20px;
+  border-radius: 7px;
+  font-weight: 400;
+  border: 2px solid #1380e8;
+
+  background-color: #1380e8;
+}
+.btn button:last-child {
+  background-color: transparent;
 }

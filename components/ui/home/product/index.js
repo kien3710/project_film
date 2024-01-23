@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useEffect } from "react";
 import "./product.css";
 import { MdPlayCircleOutline } from "react-icons/md";
 import { useRouter } from "next/navigation";
+import { gsap } from "gsap";
 
 const Product = ({ data }) => {
   const router = useRouter();
@@ -9,6 +10,22 @@ const Product = ({ data }) => {
   const handleIdProduct = (id) => {
     router.push(`/details/${id}`);
   };
+
+  useEffect(() => {
+    gsap.to(".product_color", {
+      opacity: 1,
+      y: -10,
+
+      duration: 1,
+      scrollTrigger: {
+        y: -10,
+
+        trigger: ".analog",
+        start: "top bottom", // Adjust the start position as needed
+        end: "bottom center", // Adjust the end position as needed
+      },
+    });
+  }, []);
   return (
     <>
       <div className="product_color py-[50px]">
