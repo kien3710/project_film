@@ -91,3 +91,15 @@
 .btnHot button:last-child {
   background-color: transparent;
 }
+@media only screen and (max-width: 1500px) {
+  .box_thumb {
+    height: 200px;
+  }
+  .title_hot {
+    display: flex;
+  }
+  .btnHot {
+    display: flex;
+    align-items: center;
+  }
+}

@@ -17,7 +17,7 @@ const Trending = ({ data }) => {
   const navigationPrevRef = useRef(null);
   useEffect(() => {
     gsap.from(".box_trending", {
-      y: 100,
+      y: 50,
       duration: 1,
       scrollTrigger: {
         trigger: ".box_trending",
@@ -29,7 +29,7 @@ const Trending = ({ data }) => {
   return (
     <div className="container mx-auto">
       <div className="py-[50px]">
-        <p className="text-white text-[36px] py-[50px]">Trending</p>
+        <p className="text-white text-[36px] ">Trending</p>
         <div className="box_trending text-white relative">
           <Swiper
             modules={[Navigation]}

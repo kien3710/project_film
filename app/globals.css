@@ -33,7 +33,7 @@ body {
 .textInputWrapper {
   position: relative;
   width: 100%;
-  margin: 12px 5px;
+  /* margin: 12px 5px; */
   --accent-color: #2f80ed;
 }
 

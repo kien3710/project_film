@@ -53,12 +53,14 @@ export default function Hot({ data }) {
                   }}
                 >
                   <div className="title_hot  w-[800px] h-[auto] text-white ">
-                    <p className="text-[50px] mb-[10px] font-bold leading-[70px]">
-                      {item.title}
-                    </p>
-                    <p className="mb-[10px] font-bold">{item.brand}</p>
-                    <p className="mb-[10px] font-bold">2HRS 16 MIN</p>
-                    <p className=" mb-[30px]">{item.description}</p>
+                    <div className="text">
+                      <p className="text-[50px] mb-[10px] font-bold leading-[70px]">
+                        {item.title}
+                      </p>
+                      <p className="mb-[10px] font-bold">{item.brand}</p>
+                      <p className="mb-[10px] font-bold">2HRS 16 MIN</p>
+                      <p className=" mb-[30px]">{item.description}</p>
+                    </div>
                     <div className="btnHot">
                       <button>TRAILER</button>
                       <button>XEM PHIM</button>
@@ -77,8 +79,14 @@ export default function Hot({ data }) {
           autoplay={{ delay: 2000 }}
           watchSlidesProgress
           onSwiper={setThumbsSwiper}
-          slidesPerView={7}
+          // slidesPerView={7}
           spaceBetween={30}
+          breakpoints={{
+            768: {
+              // width: 768,
+              slidesPerView: 6,
+            },
+          }}
         >
           {data?.map((item) => (
             <>

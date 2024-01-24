@@ -13,26 +13,104 @@
 
 .profile .profile_box .sidebar {
   width: 100px;
-  height: 90%;
+
   display: flex;
-  justify-content: center;
-  padding: 20px 0;
+  padding: 50px 0;
   background-color: #f3f3f4;
+}
+.profile .profile_box .sidebar li {
+  height: 60px;
+  width: 100%;
+  justify-content: center;
+  display: flex;
+  align-items: center;
 }
 .profile .profile_box .content {
   position: relative;
   width: calc(100% - 150px);
   height: 100%;
   background-color: #f3f3f4;
-  padding: 40px;
+  padding: 70px 40px 40px 40px;
 }
 .profile .profile_box .content::before {
   content: "Profile";
   position: absolute;
   top: -60px;
   left: 50px;
-  /* color: #1380e8; */
-  color: white;
+  color: #1380e8;
   font-weight: bold;
   font-size: 80px;
+}
+/* upload */
+.upload {
+  background-image: url("https://plus.unsplash.com/premium_photo-1664457233888-523931beef03?q=80&w=1965&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-size: cover;
+  position: relative;
+  padding: 5px 10px;
+}
+/* input */
+#fileInput {
+  display: none;
+}
+
+#customFileLabel {
+  cursor: pointer;
+
+  position: absolute;
+  bottom: 0;
+  right: 20px;
+  border-radius: 100%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 35px;
+  height: 35px;
+  background-color: white;
+  box-shadow: -6px -8px 31px 0px rgba(173, 173, 173, 0.75);
+  -webkit-box-shadow: -6px -8px 31px 0px rgba(173, 173, 173, 0.75);
+  -moz-box-shadow: -6px -8px 31px 0px rgba(173, 173, 173, 0.75);
+}
+
+#fileInput::file-selector-button {
+  display: none;
+}
+.icon_upload {
+  font-size: 25px;
+}
+.input_profile label {
+  font-weight: bold;
+  color: gray;
+  font-size: 12px;
+}
+.input_profile input {
+  padding: 2px 0;
+  outline: none;
+  background-color: transparent;
+  border-bottom: 2px solid rgb(120, 120, 120, 0.3);
+}
+.input_profile input::placeholder {
+  font-size: 13px;
+  color: rgb(119, 119, 119, 0.5);
+}
+.btn_profile {
+  position: absolute;
+  bottom: -20px;
+  right: -20px;
+}
+.btn_profile button {
+  padding: 15px 60px;
+  background-color: #1380e8;
+  color: white;
+  font-weight: bold;
+}
+.btn_profile button:hover {
+  background: rgb(255, 0, 219);
+  background: linear-gradient(
+    90deg,
+    rgba(255, 0, 219, 1) 0%,
+    rgba(0, 212, 255, 1) 100%
+  );
 }

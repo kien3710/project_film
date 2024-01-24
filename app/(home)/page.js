@@ -9,6 +9,7 @@ import { useDispatch } from "react-redux";
 import React, { useEffect, useState } from "react";
 import Trending from "@/components/ui/home/trending";
 import Loading from "@/components/loading";
+import NotFound from "@/components/404";
 
 const Home = () => {
   const [loading, setLoading] = useState(false);
@@ -25,7 +26,7 @@ const Home = () => {
   }, []);
   return (
     <>
-      {loading ? (
+      {data.length > 0 ? (
         <>
           <Hot data={data} />
           <Analog />
@@ -33,7 +34,9 @@ const Home = () => {
           <Trending data={data} />
         </>
       ) : (
-        <Loading />
+        <>
+          <Loading />
+        </>
       )}
     </>
   );
