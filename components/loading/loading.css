@@ -5,7 +5,13 @@
   left: 0;
   bottom: 0;
   right: 0;
-  background-color: var(--bg-main);
+  /* background-color: var(--bg-main); */
+  background-color: rgb(60, 249, 199);
+  transform: scale(1);
+  transition: all 1s ease;
+}
+.loading_active {
+  transform: scale(0);
 }
 .loading_center {
   position: absolute;

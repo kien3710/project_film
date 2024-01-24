@@ -52,14 +52,14 @@ export default function Hot({ data }) {
                     backgroundImage: `url('${item.images[0]}')`,
                   }}
                 >
-                  <div className="title_hot  w-[700px] h-[auto] text-white ">
-                    <p className="text-[60px] mb-[10px] font-bold leading-[70px]">
+                  <div className="title_hot  w-[800px] h-[auto] text-white ">
+                    <p className="text-[50px] mb-[10px] font-bold leading-[70px]">
                       {item.title}
                     </p>
                     <p className="mb-[10px] font-bold">{item.brand}</p>
                     <p className="mb-[10px] font-bold">2HRS 16 MIN</p>
                     <p className=" mb-[30px]">{item.description}</p>
-                    <div className="btn">
+                    <div className="btnHot">
                       <button>TRAILER</button>
                       <button>XEM PHIM</button>
                     </div>

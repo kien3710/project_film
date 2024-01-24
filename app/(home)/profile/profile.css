@@ -1,0 +1,38 @@
+.profile {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.profile .profile_box {
+  /* background-color: red; */
+  width: 900px;
+  height: 600px;
+}
+
+.profile .profile_box .sidebar {
+  width: 100px;
+  height: 90%;
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+  background-color: #f3f3f4;
+}
+.profile .profile_box .content {
+  position: relative;
+  width: calc(100% - 150px);
+  height: 100%;
+  background-color: #f3f3f4;
+  padding: 40px;
+}
+.profile .profile_box .content::before {
+  content: "Profile";
+  position: absolute;
+  top: -60px;
+  left: 50px;
+  /* color: #1380e8; */
+  color: white;
+  font-weight: bold;
+  font-size: 80px;
+}

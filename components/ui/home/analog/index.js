@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import "./analog.css";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import ButtonPopular from "./button";
 gsap.registerPlugin(ScrollTrigger);
 
 const Analog = () => {
@@ -40,13 +41,14 @@ const Analog = () => {
             <option value="">Action/Adventure</option>
           </select>
         </div>
-        <div className="popular bg-[#131720] text-white py-[5px] px-[10px] rounded-[20px]">
+        {/* <div className="popular bg-[#131720] text-white py-[5px] px-[10px] rounded-[20px]">
           <ul>
             <li>Featured</li>
             <li>Popular</li>
             <li>Newest</li>
           </ul>
-        </div>
+        </div> */}
+        <ButtonPopular />
       </div>
     </div>
   );

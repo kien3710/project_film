@@ -79,7 +79,7 @@
   z-index: 11;
   text-transform: uppercase;
 }
-.btn button {
+.btnHot button {
   padding: 7px 20px;
   margin-right: 20px;
   border-radius: 7px;
@@ -88,6 +88,6 @@
 
   background-color: #1380e8;
 }
-.btn button:last-child {
+.btnHot button:last-child {
   background-color: transparent;
 }

@@ -1,0 +1,15 @@
+.forgot {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.box_forgot {
+  max-width: 400px;
+  width: 100%;
+  min-height: 500px;
+  background-color: #131720;
+  border: 1px solid #151f30;
+  border-radius: 16px;
+}

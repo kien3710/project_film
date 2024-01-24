@@ -40,7 +40,7 @@ const Details = () => {
             formTrailer={formTrailer}
             closeFormTrailer={() => setFormTrailer(false)}
           />
-          <div className="details py-[50px]">
+          <div className="details py-[100px]">
             <div className="container mx-auto">
               <div
                 className="trailer flex items-center mb-[16px] inline-flex"
