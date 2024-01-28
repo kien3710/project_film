@@ -28,10 +28,12 @@ export default function Hot({ data }) {
       //   end: "bottom center", // Adjust the end position as needed
       // },
     });
+    gsap.set(".title_hot", { opacity: 0 });
     gsap.to(".title_hot", {
       opacity: 1,
-      x: 100,
+      left: 50,
       duration: 1,
+      // onComplete: () => gsap.set(".title_hot", { opacity: 1 }),
     });
   }, []);
   return (

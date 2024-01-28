@@ -75,8 +75,8 @@
 }
 .title_hot {
   position: absolute;
-  top: 20%;
-  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
   z-index: 11;
   text-transform: uppercase;
 }
