@@ -11,6 +11,7 @@ import { getByIdAction, selectProduct } from "@/utils/features/productSlice";
 import Loading from "@/components/loading";
 import ReactPlayer from "react-player";
 import FormTrailer from "@/components/ui/details/formTrailer";
+import BreadCrumbs from "@/components/ui/breadcrumbs";
 
 const Details = () => {
   const params = useParams();
@@ -42,6 +43,7 @@ const Details = () => {
           />
           <div className="details py-[100px]">
             <div className="container mx-auto">
+              <BreadCrumbs />
               <div
                 className="trailer flex items-center mb-[16px] inline-flex"
                 onClick={handleFormTrailer}

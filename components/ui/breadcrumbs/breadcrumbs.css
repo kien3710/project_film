@@ -1,0 +1,39 @@
+.breadCrumbs {
+  background-color: #2f80ed;
+  position: relative;
+  border-radius: 25px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  color: white;
+}
+.bread_home {
+  width: 70px;
+  height: 70px;
+  background-color: #2f80ed;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+  border: 5px solid white;
+}
+.bread_home:hover {
+  background-color: var(--bg-main);
+  transition: all 0.5s ease;
+  transform: scale(1.1);
+}
+.breadCrumbs ul {
+  display: flex;
+  margin-left: 80px;
+}
+
+.breadCrumbs ul li {
+  margin-right: 20px;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.breadCrumbs ul li a:hover {
+  color: black;
+}

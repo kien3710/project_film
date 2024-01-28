@@ -12,11 +12,12 @@
 }
 .thumbs {
   position: absolute;
-  left: 50px;
-  right: 50px;
-  bottom: 0;
+  top: 50%;
+  transform: translateY(-50%);
   z-index: 100;
   opacity: 0;
+  right: 0;
+  width: 100vh;
 }
 .box_thumb {
   overflow: hidden;
@@ -90,6 +91,35 @@
 }
 .btnHot button:last-child {
   background-color: transparent;
+}
+/* btn action */
+.btnActionLeft {
+  position: absolute;
+  bottom: 50px;
+  left: 47%;
+  z-index: 20;
+  width: 50px;
+  height: 50px;
+  background-color: gray;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+.btnActionRight {
+  position: absolute;
+  bottom: 50px;
+  right: 47%;
+  z-index: 20;
+  width: 50px;
+  height: 50px;
+  background-color: gray;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
 }
 @media only screen and (max-width: 1500px) {
   .box_thumb {

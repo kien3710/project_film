@@ -1,26 +1,26 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { CiPlay1 } from "react-icons/ci";
+import { FaArrowLeft } from "react-icons/fa6";
+import { FaArrowRight } from "react-icons/fa6";
 
 import "./hot.css";
 import "swiper/css";
 
-import { CiStar } from "react-icons/ci";
-import { GiSaveArrow } from "react-icons/gi";
-import Link from "next/link";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 import { useState } from "react";
-import { Autoplay, Thumbs } from "swiper/modules";
+import { Autoplay, Thumbs, Navigation } from "swiper/modules";
 
 export default function Hot({ data }) {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
-
+  const navigationNextRef = useRef(null);
+  const navigationPrevRef = useRef(null);
   useEffect(() => {
     gsap.to(".thumbs", {
       opacity: 1,
-      y: -100,
+      // y: -100,
       duration: 1,
       // scrollTrigger: {
       //   trigger: ".thumbs",
@@ -35,12 +35,16 @@ export default function Hot({ data }) {
     });
   }, []);
   return (
-    <section className="hot_film">
+    <section className="hot_film h-[100vh]">
       <div className="main ">
         <Swiper
           className="mb-5 "
-          modules={[Thumbs, Autoplay]}
+          modules={[Thumbs, Autoplay, Navigation]}
           // autoplay={{ delay: 300 }}
+          navigation={{
+            prevEl: navigationPrevRef.current,
+            nextEl: navigationNextRef.current,
+          }}
           thumbs={{ swiper: thumbsSwiper }}
         >
           {data?.map((item) => (
@@ -84,14 +88,14 @@ export default function Hot({ data }) {
           breakpoints={{
             768: {
               // width: 768,
-              slidesPerView: 6,
+              slidesPerView: 3,
             },
           }}
         >
           {data?.map((item) => (
             <>
               <SwiperSlide>
-                <div className="box_thumb cursor-pointer rounded-lg overflow-hidden w-full h-[250px]  relative">
+                <div className="box_thumb cursor-pointer rounded-[25px] overflow-hidden w-full h-[350px]  relative">
                   <div
                     className="box_img  bg-cover bg-center w-full h-full"
                     style={{
@@ -105,6 +109,13 @@ export default function Hot({ data }) {
             </>
           ))}
         </Swiper>
+      </div>
+      {/* button */}
+      <div className="btnActionLeft" ref={navigationPrevRef}>
+        <FaArrowLeft />
+      </div>
+      <div className="btnActionRight" ref={navigationNextRef}>
+        <FaArrowRight />
       </div>
     </section>
   );
