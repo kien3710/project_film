@@ -28,7 +28,7 @@ const Header = () => {
       <header
         className={
           isScrolled
-            ? "flex justify-between items-center text-white header_sticky"
+            ? "flex justify-between items-center text-white header_sticky fixed"
             : "flex justify-between items-center text-white "
         }
       >

@@ -5,7 +5,7 @@
 
 header {
   height: 100px;
-  position: fixed;
+  /* position: fixed; */
   right: 0;
   left: 0;
   padding: 0 11.5rem;

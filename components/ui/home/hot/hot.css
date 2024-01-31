@@ -123,10 +123,10 @@
 }
 @media only screen and (max-width: 1500px) {
   .box_thumb {
-    height: 200px;
+    height: 300px;
   }
   .title_hot {
-    display: flex;
+    width: 600px;
   }
   .btnHot {
     display: flex;
