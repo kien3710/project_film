@@ -16,7 +16,7 @@ header {
 .logo {
   cursor: pointer;
   font-family: "samurai", sans-serif;
-  font-size: 100px;
+  font-size: 50px;
   color: #1380e8;
 }
 .header_sticky {

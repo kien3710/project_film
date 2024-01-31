@@ -24,14 +24,14 @@ const Header = () => {
     };
   }, []);
   return (
-    <div className="container mx-auto ">
-      <header
-        className={
-          isScrolled
-            ? "flex justify-between items-center text-white header_sticky fixed"
-            : "flex justify-between items-center text-white "
-        }
-      >
+    <header
+      className={
+        isScrolled
+          ? "flex items-center text-white header_sticky fixed "
+          : " flex item-center text-white absolute "
+      }
+    >
+      <div className="container mx-auto flex justify-between items-center">
         <div className="logo">
           <Link href="/">KN</Link>
         </div>
@@ -66,8 +66,8 @@ const Header = () => {
             <DarkLight />
           </div>
         </div>
-      </header>
-    </div>
+      </div>
+    </header>
   );
 };
 
